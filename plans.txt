@@ -1,0 +1,60 @@
+Our UI Stack is not best in the world but it is certainly superior, superb, scalable, maintainable and at the same time need some improvements !
+
+Here is some high level features which comes into my mind, 
+Let me know If I am missing anything ! I will try to make a feature presentation on the same !
+
+====== Build =========
+
+* Grunt based build system
+* JS, JSON code beautification using jsbeautifier
+* Compiling SCSS to CSS
+* Compiling HTML underscore templates into JS code
+* Concat and minify JS files into single file
+* Concat and minify CSS files into single file
+* jsHint on all js files
+* grunt-prettysass for beautification of CSS files
+* Creating webfont from SVG icon files
+* Creating image sprites using compass
+* Installing 3rd party libraries using bower
+* 
+=== Dev =====
+
+* cdn based development
+* Developer need not to install server on their system,  they can point UI to any server, even to production,
+this help to debug and solve bug rapidly
+* ui panel for developerConfig,
+* debug mode="true" will load all js files rather then single bulky minified file, easy to debug
+
+=== Tech ===
+
+* Showing Banner to IE and not supported browser
+* Custom element using x-tag libraries (x-daterange)
+* Choona.js widget loading library
+* Model using klass.js and binding them using rivets.bind
+* Service + Model + 2 way binding based Forms which support inline editing
+* Used select2 for autoCompplete
+* Used datepicker plugin
+* Used jQuery promise (done) for handling XHR response in view
+* Google analytic based error/exception logging service
+* Single place tryDone
+* small uniProgressBarPlugin
+* Separate DataLayer/DataDispatcher layer for XHR/REST API handeling
+* Bootstrap modal() for popup
+* Highly reusable decoupled modules
+* pub/sub communication for decoupled modules
+* NotificationProxy and GenericModalBox for alert/error notification 
+* Continuous code refactoring strategy 
+* localstorage based CMS solution
+* Configuration driven modules - dataTable
+* Davis based Routing engine, handle old-iframe based code + new single page code 
+* support for multiple language, Language Service manager
+* Enums, RegExp, UrlServices, Validation profiles services
+* UI Widgets
+* head.js and resourceLoader.js based initialPayload JavaScript which can fetch rest of JavaScripts/CSS from any CDN
+
+=== Google Analytics ===
+
+* Tracking Events 
+* Tracking Error Logs on the Page Via Analtics
+* Traffic Ananlysis
+
