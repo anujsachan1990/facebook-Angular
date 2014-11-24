@@ -1,0 +1,60 @@
+li.friendlist {
+border: 1px solid #aaa;
+padding: 26px;
+margin-bottom: 8px;
+background: #eee;
+width: 168px;
+float: left;
+margin-right: 9px;
+transition: background-color 0.5s ease;
+background-color: #eee;
+}
+div#profilePic img {
+width: 150px;
+}
+li.friendlist:hover {
+transition: background-color 0.5s ease;
+background-color: #ccc;
+cursor: pointer;
+}
+button.btn {
+position: fixed;
+top: 40%;
+left: 42%;
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: bold;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
+cursor: pointer;
+border: 1px solid transparent;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+button.btn:hover{
+background-color: #3276b1;
+}
+body{
+/*background: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZzoo-aqlRUVWnjsbDzxz6C8s85lfa_z2lkqjpXkuJI6_bGJ9IWQ") repeat -190px 0px transparent;*/
+background: #ccc;
+background-size: cover;
+height: 100%;
+width: 100%;
+white-space: nowrap;
+position: relative;
+left: 0;
+-webkit-transition: left 0.3s ease-out;
+transition: left 0.3s ease-out;
+max-width: 1440px;
+}
