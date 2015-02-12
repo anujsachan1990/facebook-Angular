@@ -6,17 +6,14 @@ app.run(function($rootScope, Facebook) {
 })
 
 app.factory('Facebook', function() {
-
     var self = this;
     this.auth = null;
     this.userInfo = null;
     this.friendlist = null;
 
     return {
-
         getAuth: function() {
             return self.auth;
-
         },
         getUserData: function() {
             return self.userInfo;
@@ -53,26 +50,12 @@ app.factory('Facebook', function() {
                             $.each(response.data, function(v, i) {
                                 var userId = response.data[v].id;
                                 var userName = response.data[v].first_name.concat(" " + response.data[v].last_name);
+                                $("#test img.loading").css("display","none");
+                                $(".fade").removeClass("in");
                                 $("#test ul").append('<li style="list-style:decimal" class="friendlist"><span>' + userName + '</span><img src="https://graph.facebook.com/' + userId + '/picture?type=large"/></li>');
                             });
                         }, 1000);
                     });
-
-                    // FB.api('/me/friendlists', function(response1) {
-
-                    //        $.each(response1.data, function(key, value) {
-                    //            console.log(key + ": " + value.id);
-                    //            FB.api(value.id + "/members", function(response2) {
-                    //                $.extend(self.friendlist, response2);
-                    //                $.each(response2.data, function(key, friends) {
-                    //                    console.log(friends.name);
-                    //                    $("body").append("<li style='list-style:decimal' class='friendlist'>" + friends.name + "</li>");
-                    //                });
-                    //            });
-                    //        });
-                    //        self.userInfo = response1;
-                    //        return response1;
-                    //    });
                 } else {
                     console.log('Facebook login failed', response);
                 }
@@ -101,32 +84,46 @@ app.factory('Facebook', function() {
 
         },
         loginCheck: function() {
-
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
-                    // the user is logged in and has authenticated your
-                    // app, and response.authResponse supplies
-                    // the user's ID, a valid access token, a signed
-                    // request, and the time the access token 
-                    // and signed request each expire
                     alert("logged In");
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
                 } else if (response.status === 'not_authorized') {
-                    // the user is logged in to Facebook, 
-                    // but has not authenticated your app
                     alert("not_authorized");
                 } else {
-                    // the user isn't logged in to Facebook.
+                    alert("not logged in");
+                }
+            });
+        }
+    }
+
+});
+
+$(window).load(function() {
+  
+      FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                  
+                    var uid = response.authResponse.userID;
+                    var accessToken = response.authResponse.accessToken;
+
+                      $(".btn").click();
+                      $(".fade").addClass("in");
+                      $("#test").append("<img class='loading' src='http://preloaders.net/preloaders/131/3D%20snake.gif'>")
+                } else if (response.status === 'not_authorized') {
+                    alert("not_authorized");
+                } else {
                     alert("not logged in");
                 }
             });
 
-        }
+});
 
-    }
 
-})
+
+
+
 
 window.fbAsyncInit = function() {
     FB.init({
