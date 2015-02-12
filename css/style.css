@@ -9,9 +9,11 @@ margin-right: 9px;
 transition: background-color 0.5s ease;
 background-color: #eee;
 height: 300px;
+list-style: none!important;
 }
 div#profilePic img {
 width: 150px;
+border-radius: 50% 50%;
 }
 li.friendlist:hover {
 transition: background-color 0.5s ease;
@@ -75,4 +77,42 @@ bottom: 6px;
 }
 div#test ul li {
 position: relative;
+}
+.lfloat {
+float: left;
+}
+.width12{
+	width: 12%;
+}
+.width85{
+	width: 85%;
+}
+.rfloat {
+float: right;
+}
+.clearfix{
+	clear: both;
+}
+.profileDiv {
+background: #fff;
+text-align: center;
+padding: 19px;
+display: block;
+position: relative;
+border-radius: 10px;
+}
+img.loading {
+position: fixed;
+left: 50%;
+top: 50%;
+margin-left: -16px;
+margin-top: -16px;
+z-index: 100;
+}
+.fade.in {
+position: fixed;
+height: 100%;
+width: 100%;
+background: rgba(0,0,0,0.7);
+z-index: 99;
 }
