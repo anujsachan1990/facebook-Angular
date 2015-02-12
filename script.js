@@ -25,7 +25,7 @@ app.factory('Facebook', function() {
         
       },
       getUserData: function() {
-      	return self.userInfo;
+        return self.userInfo;
       },
       login: function() {
         $(".btn").hide();
@@ -34,44 +34,44 @@ app.factory('Facebook', function() {
             self.auth = response.authResponse;
             
             FB.api(
-	    "/me/picture",
-	    function (response) {
+      "/me/picture?redirect=0&height=200&type=normal&width=200",
+      function (response) {
         var str = response.data.url;
       // var res = str.replace("v/t1.0-1/c0.0.50.50/p50x50", "");
 
 
-	      if (response && !response.error) {
-	      	        document.getElementById('profilePic').innerHTML = '<img src="'+str+'">';
-	      }
-	    }
-	);
-	
-	FB.api(
-	    "/me",
-	    function (response) {
-	      if (response && !response.error) {
-	      	        document.getElementById('basicInfo').innerHTML = "Name: "+response.name+ "<br/>Gender:" +response.gender;
-	      }
-	    }
-	);
-	
-	            
+        if (response && !response.error) {
+                  document.getElementById('profilePic').innerHTML = '<img src="'+str+'">';
+        }
+      }
+  );
+  
+  FB.api(
+      "/me",
+      function (response) {
+        if (response && !response.error) {
+                  document.getElementById('basicInfo').innerHTML = "Name: "+response.name+ "<br/>Gender:" +response.gender;
+        }
+      }
+  );
+  
+              
 
             FB.api('/me/friendlists', function(response1) {
-            	
-	       	$.each( response1.data, function( key, value ) {
-			console.log( key + ": " + value.id );
-			FB.api(value.id+"/members", function(response2) {
-				$.extend(self.friendlist, response2);
-				$.each( response2.data, function( key, friends ) {
-					console.log( friends.name);
+              
+          $.each( response1.data, function( key, value ) {
+      console.log( key + ": " + value.id );
+      FB.api(value.id+"/members", function(response2) {
+        $.extend(self.friendlist, response2);
+        $.each( response2.data, function( key, friends ) {
+          console.log( friends.name);
             $("body").append("<li style='list-style:decimal' class='friendlist'>" +friends.name +"</li>");
-				});
-			});
-		});
-		self.userInfo = response1;
-	        return response1;
-	    });
+        });
+      });
+    });
+    self.userInfo = response1;
+          return response1;
+      });
           } else {
             console.log('Facebook login failed', response);
           }
