@@ -8,6 +8,7 @@ float: left;
 margin-right: 9px;
 transition: background-color 0.5s ease;
 background-color: #eee;
+height: 300px;
 }
 div#profilePic img {
 width: 150px;
@@ -57,4 +58,21 @@ left: 0;
 -webkit-transition: left 0.3s ease-out;
 transition: left 0.3s ease-out;
 max-width: 1440px;
+}
+li.friendlist img {
+float: left;
+width: 176px;
+}
+
+div#test ul li span {
+position: absolute;
+display: inline-block;
+width: 100%;
+left: 0px;
+text-align: center;
+font-size: 22px;
+bottom: 6px;
+}
+div#test ul li {
+position: relative;
 }
