@@ -1,31 +1,43 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <title>Facebook test</title>
+    <title>FADE BOOKs</title>
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.angularjs.org/1.0.0rc2/angular-1.0.0rc2.min.js"></script>
-    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-      <script src="script.js"></script>
-    </head>
-    <body onload="loginCheck()">
-<section ng-app='myApp'>
-    
-    <button class='btn' ng-click="Facebook.login()">Connect with Facebook</button>
-    
+    <script src="script.js"></script>
+</head>
 
-    <div ng-show="Facebook.getAuth()">
-        <h4>Access Token:</h4>
-        <p ng-bind="Facebook.getAuth().accessToken"></p>
-        <p id="status"></p>
-        <button class='btn btn-small' ng-click="Facebook.logout()">Logout</button>
-    </div>
-    <div ng-show="Facebook.getUserData()">
+
+<body>
+<div class="fade"></div>
+    <section ng-app='myApp'>
+
+        <button class='btn' ng-click="Facebook.login()">Connect with Facebook</button>
+
+
+        <div ng-show="Facebook.getAuth()">
+            <h4>Access Token:</h4>
+            <p ng-bind="Facebook.getAuth().accessToken"></p>
+            <p id="status"></p>
+            <button class='btn btn-small' ng-click="Facebook.logout()">Logout</button>
+        </div>
+        <div ng-show="Facebook.getUserData()">
             <p ng-bind="Facebook.getUserData().paging.next"></p>
-    </div>
-    <div id="profilePic"></div>
-        <div id="basicInfo"></div>
-
-    <div id='fb-root'></div>
-    <div id="test"><ul></ul></div>
-</section>
+        </div>
+        <div class="lfloat width12 profileDiv">
+             <div id="profilePic"></div>
+             <div id="basicInfo"></div>
+        </div>
+       <div class="rfloat width85">
+           <div id='fb-root'></div>
+        <div id="test">
+            <ul></ul>
+        </div>
+       </div> 
+    </section>
 </body>
+
+</html>
