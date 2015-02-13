@@ -50,7 +50,9 @@ app.factory('Facebook', function() {
                             $.each(response.data, function(v, i) {
                                 var userId = response.data[v].id;
                                 var userName = response.data[v].first_name.concat(" " + response.data[v].last_name);
-                                $("#test img.loading").css("display","none");
+                                $(".facebook-login").fadeOut();
+                                $("#test img.loading").fadeOut();
+                                $(".profileDiv").fadeIn();
                                 $(".fade").removeClass("in");
                                 $("#test ul").append('<li style="list-style:decimal" class="friendlist"><span>' + userName + '</span><img src="https://graph.facebook.com/' + userId + '/picture?type=large"/></li>');
                             });
@@ -107,10 +109,11 @@ $(window).load(function() {
                   
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
-
-                      $(".btn").click();
-                      $(".fade").addClass("in");
+                      $(".btn").click(function(){
+                        $(".fade").addClass("in");
                       $("#test").append("<img class='loading' src='http://preloaders.net/preloaders/131/3D%20snake.gif'>")
+                      });
+                      
                 } else if (response.status === 'not_authorized') {
                     alert("not_authorized");
                 } else {

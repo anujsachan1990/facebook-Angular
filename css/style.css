@@ -1,3 +1,8 @@
+body{
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
 li.friendlist {
 border: 1px solid #aaa;
 padding: 26px;
@@ -44,6 +49,7 @@ border-radius: 4px;
 -ms-user-select: none;
 -o-user-select: none;
 user-select: none;
+z-index: 2;
 }
 button.btn:hover{
 background-color: #3276b1;
@@ -100,6 +106,7 @@ padding: 19px;
 display: block;
 position: relative;
 border-radius: 10px;
+display: none;
 }
 img.loading {
 position: fixed;
@@ -108,6 +115,7 @@ top: 50%;
 margin-left: -16px;
 margin-top: -16px;
 z-index: 100;
+border-radius: 50%;
 }
 .fade.in {
 position: fixed;
@@ -115,4 +123,88 @@ height: 100%;
 width: 100%;
 background: rgba(0,0,0,0.7);
 z-index: 99;
+}
+#bg_image{
+left: -8px;
+top: -120px;
+position: absolute;
+width: 1614px;
+height: 1009px;
+z-index: 2;
+}
+#Rectangle1 {
+left: -1px;
+top: -1px;
+position: fixed;
+width: 1608px;
+height: 74px;
+z-index: 3;
+}
+#Chatfree {
+left: 137px;
+top: 20px;
+position: absolute;
+width: 123px;
+height: 29px;
+z-index: 4;
+}
+#RoundedRectangle1 {
+left: 608px;
+top: 162px;
+position: absolute;
+width: 384px;
+height: 444px;
+z-index: 6;
+}
+#facebooklogin {
+left: 643px;
+top: 398px;
+position: absolute;
+width: 316px;
+height: 43px;
+z-index: 7;
+cursor: pointer;
+}
+#SignInwith {
+left: 743px;
+top: 334px;
+position: absolute;
+width: 115px;
+height: 22px;
+z-index: 8;
+}
+#tumblrlogo {
+left: 703px;
+top: 218px;
+position: absolute;
+width: 196px;
+height: 51px;
+z-index: 9;
+}
+#Chat {
+left: 702px;
+top: 256px;
+position: absolute;
+width: 78px;
+height: 30px;
+z-index: 10;
+}
+#free {
+left: 786px;
+top: 242px;
+position: absolute;
+width: 111px;
+height: 44px;
+z-index: 11;
+}
+div#wrapper {
+position: relative;
+z-index: 9999;
+top: 95px;
+}
+div#RoundedRectangle1 img {
+opacity: 0.7;
+}
+div#facebooklogin:hover {
+opacity: 0.9;
 }
