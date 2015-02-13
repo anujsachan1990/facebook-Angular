@@ -43,8 +43,7 @@ app.factory('Facebook', function() {
                         }
                     );
 
-
-                    FB.api('me/friends?fields=first_name,gender,location,last_name', function(response) {
+                    FB.api('me/friends?fields=first_name,gender,location,last_name&limit=5000', function(response) {
                         console.log('Got friends: ', response);
                         setTimeout(function() {
                             $.each(response.data, function(v, i) {
@@ -54,8 +53,10 @@ app.factory('Facebook', function() {
                                 $("#test img.loading").fadeOut();
                                 $(".profileDiv").fadeIn();
                                 $(".fade").removeClass("in");
-                                $("#test ul").append('<li style="list-style:decimal" class="friendlist"><span>' + userName + '</span><img src="https://graph.facebook.com/' + userId + '/picture?type=large"/></li>');
+                                $("#test ul").append('<li style="list-style:decimal" class="friendlist"><span>' + userName + '</span><img src="https://graph.facebook.com/' + userId + '/picture?type=square&height=250"/></li>');
                             });
+                                
+
                         }, 1000);
                     });
                 } else {

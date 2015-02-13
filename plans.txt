@@ -58,3 +58,7 @@ this help to debug and solve bug rapidly
 * Tracking Error Logs on the Page Via Analtics
 * Traffic Ananlysis
 
+==========================
+facebook ApI reference
+
+https://developers.facebook.com/docs/graph-api/reference/v2.2/user

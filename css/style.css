@@ -69,7 +69,8 @@ max-width: 1440px;
 }
 li.friendlist img {
 float: left;
-width: 176px;
+height: 250px;
+max-width: 172px;
 }
 
 div#test ul li span {
@@ -79,7 +80,7 @@ width: 100%;
 left: 0px;
 text-align: center;
 font-size: 22px;
-bottom: 6px;
+bottom: 27px;
 }
 div#test ul li {
 position: relative;
