@@ -135,7 +135,7 @@ z-index: 2;
 #Rectangle1 {
 left: -1px;
 top: -1px;
-position: fixed;
+position: absolute;
 width: 1608px;
 height: 74px;
 z-index: 3;
